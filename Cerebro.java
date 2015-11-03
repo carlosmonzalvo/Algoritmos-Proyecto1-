@@ -29,8 +29,8 @@ class Cerebro {
     }
   }
 
-  boolean esUnOp(char sOp){ // me mandaba error porque segun el compilador los signos son String no Char
-    if (sOp == a || sOp == b || sOp == c || sOp == d || sOp == e || sOp == f) {   //Metodo para comparar los operandos
+  boolean esUnOp(char sOp){ //Metodo para comparar los operandos
+    if (sOp == a || sOp == b || sOp == c || sOp == d || sOp == e || sOp == f) {   
         operador.push(sOp);
       return true;
     } else {
