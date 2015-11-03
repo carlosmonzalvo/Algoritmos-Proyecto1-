@@ -4,14 +4,46 @@ class Cerebro {
   PilaNum numero = new PilaNum(max);
   PilaOper operador = new PilaOper(max);
   String res, data;
-  char a = '+', b = '-', c = '*', d = '/', e = '(', f = ')';
+  char a = '+', b = '-', c = '*', d = '/', e = '(', f = ')', g = 'ˆ';
 
   //Contructor
   Cerebro(String dato){
     data = dato;
   }
 
+  /*
+  |4|  |+|      a ◊ b    6 - 2 + 4 = 8                          4 6 2
+  |2|  |-|               4 + (6 - 2) = 8                        +(- 
+  |6|                    <----------
+
+  */
   //Metodos
+  int operar(){
+    int b = numero.pop();
+    if (operador.length() != 0){
+      char oP = operador.pop()
+      if(oP == '('){
+        return b;
+      } else if (oP == ')' && operador.length > 0) {
+        oP = operador.pop()
+      }
+    } else {
+      return b;
+    }
+      switch (oP) {
+        case a:
+          return b + operar(); //1  4 + 4 = 8 
+        case b:                               
+          return operar() - b; //2  6 - 2 = 4       
+        case c:
+          return b * operar();
+        case d:
+          return operar() / b;
+        default:
+          return 0;
+          break;
+      } 
+  }
   void configur(){
     String aux = "";
     for (int i = 0; i< data.length(); i++) {  //ciclos de comparacion para ver si es un   
@@ -29,8 +61,8 @@ class Cerebro {
     }
   }
 
-  boolean esUnOp(char sOp){ //Metodo para comparar los operandos
-    if (sOp == a || sOp == b || sOp == c || sOp == d || sOp == e || sOp == f) {   
+  boolean esUnOp(char sOp){ // me mandaba error porque segun el compilador los signos son String no Char
+    if (sOp == a || sOp == b || sOp == c || sOp == d || sOp == e || sOp == f || sOp == g) {   //Metodo para comparar los operandos
         operador.push(sOp);
       return true;
     } else {
