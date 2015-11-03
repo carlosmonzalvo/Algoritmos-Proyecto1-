@@ -15,22 +15,21 @@ class Cerebro {
   |4|  |+|      a ◊ b    6 - 2 + 4 = 8                          4 6 2
   |2|  |-|               4 + (6 - 2) = 8                        +(- 
   |6|                    <----------
-
   */
   //Metodos
   int operar(){
     int b = numero.pop();
     String oP;
-    if (operador.tope() != 0){
+    if (operador.tope() > 0){ // Checar si hay operaciones pendientes.
       oP = Character.toString(operador.pop());
       if(oP == "("){
-        return b;                                                     //3+(2+2)+5-2
-      } else if (oP == ")" && operador.tope() > 0) {
-        oP = Character.toString(operador.pop());
-      }
-    } else {
-      return b;
-    }
+        return b;                                                     //)3+(2+2)+5-2
+      } else if (oP == ")") {                                         //  3
+        oP = Character.toString(operador.pop());                      // +
+      }                                                               //b = 2
+    } else {                                                          //return =
+      return b;                                                       //oP = 
+    }                                                                 //cola = ((5 + (2 + (2 + 2))) - 2) 
       switch (oP) {
         case "+":
           return b + operar(); //1  4 + 4 = 8 
