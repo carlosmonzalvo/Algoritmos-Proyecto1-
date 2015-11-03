@@ -1,13 +1,13 @@
 class PilaNum{
 	//ATRIBUTOS
-	private String []pila;
+	private int []pila;
 	private int tope;
 
 	//CONTRUCTORES
 
 	public PilaNum(int max){ 
 	// en el constructor dimensionamos el arreglo pila
-		pila = new String[max];
+		pila = new int[max];
 		tope = -1;
 	}
 
@@ -20,7 +20,7 @@ class PilaNum{
 			return false;
 	}
 
-	public void push(String dato){
+	public void push(int dato){
 		tope++;
 		pila[tope] = dato;
 	}
@@ -32,7 +32,7 @@ class PilaNum{
 			return false;
 	}
 
-	public String pop(){
+	public int pop(){
 		tope--;
 		return pila[tope+1];
 	}
@@ -43,7 +43,7 @@ class PilaNum{
 			System.out.println(pila[i]);
 	}
 	
-	public String valorTope(){
+	public int valorTope(){
 		return (pila[tope]);
 	}
 

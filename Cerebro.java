@@ -2,9 +2,9 @@ class Cerebro {
   //Atributos
   int max = 50;
   PilaNum numero = new PilaNum(max);
-  PilaNum NumAux = new PilaNum(max);
   PilaOper operador = new PilaOper(max);
   String res, data;
+  char a = '+', b = '-', c = '*', d = '/', e = '(', f = ')';
 
   //Contructor
   Cerebro(String dato){
@@ -29,8 +29,8 @@ class Cerebro {
     }
   }
 
-  boolean esUnOp(char sOp){ // me mandaba error porque segun el compilador los signos son String no Char 
-    if (sOp == "+" || sOp == "-" || sOp == "*" || sOp == "/" || sOp == "(" || sOp == ")") {   //Metodo para comparar los operandos
+  boolean esUnOp(char sOp){ // me mandaba error porque segun el compilador los signos son String no Char
+    if (sOp == a || sOp == b || sOp == c || sOp == d || sOp == e || sOp == f) {   //Metodo para comparar los operandos
         operador.push(sOp);
       return true;
     } else {

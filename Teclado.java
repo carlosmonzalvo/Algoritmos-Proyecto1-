@@ -5,7 +5,7 @@ public class Teclado
     static private String cadena;
     static private BufferedReader in;
 
-    // métodos públicos
+    // mutodos publicos
 	 
     public static String LeeCadena(String prompt) {
 		  return  leerCadena(prompt);
@@ -33,7 +33,7 @@ public class Teclado
 
 
 
-    // métodos privados!
+    // metodos privados
 
     private static void inicializar() {
 	     if (in==null)
