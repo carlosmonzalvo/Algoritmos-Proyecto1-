@@ -20,28 +20,29 @@ class Cerebro {
   //Metodos
   int operar(){
     int b = numero.pop();
-    if (operador.length() != 0){
-      char oP = operador.pop()
-      if(oP == '('){
-        return b;
-      } else if (oP == ')' && operador.length > 0) {
-        oP = operador.pop()
+    String oP;
+    if (operador.tope() != 0){
+      oP = Character.toString(operador.pop());
+      if(oP == "("){
+        return b;                                                     //3+(2+2)+5-2
+      } else if (oP == ")" && operador.tope() > 0) {
+        oP = Character.toString(operador.pop());
       }
     } else {
       return b;
     }
       switch (oP) {
-        case a:
+        case "+":
           return b + operar(); //1  4 + 4 = 8 
-        case b:                               
+        case "-":                               
           return operar() - b; //2  6 - 2 = 4       
-        case c:
+        case "*":
           return b * operar();
-        case d:
+        case "/":
           return operar() / b;
         default:
           return 0;
-          break;
+          
       } 
   }
   void configur(){

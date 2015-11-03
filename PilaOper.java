@@ -46,4 +46,7 @@ class PilaOper{
 	public char valorTope(){
 		return (pila[tope]);
 	}
+	public int tope(){
+		return tope;
+	}
 }

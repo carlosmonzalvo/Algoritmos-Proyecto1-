@@ -13,5 +13,7 @@ class Calculadora{
 		//Listar las pilas
 		calc.numero.listar();
 		calc.operador.listar();
+		System.out.println();
+		System.out.println(calc.operar());
 	}
 }

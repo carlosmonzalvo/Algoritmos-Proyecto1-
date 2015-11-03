@@ -46,5 +46,8 @@ class PilaNum{
 	public int valorTope(){
 		return (pila[tope]);
 	}
+	public int tope(){
+		return tope;
+	}
 
 }
